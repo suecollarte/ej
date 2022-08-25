@@ -1,0 +1,25 @@
+<h2 style="color:crimson;">Productos</h2>
+
+<% if(PRODUCTO_DB.length > 0){ %> 
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <tr style="color: yellow;"> <th>Nombre</th> <th>Precio</th> <th>Imagen</th> </tr>
+            <!-- filas -->
+            <% for (const prod of PRODUCTO_DB) {%> 
+            <tr> 
+                <td><%=prod.nombre %> </td>
+                <td><%=prod.precio %> </td>
+                <td>
+                    <img width="30" src="<%=prod.thumbail%>" alt="">
+                </td>
+            </tr>
+            <% } %> 
+            <!-- Fin filas -->
+        </table>
+    </div>
+<% } else { %> 
+    <h3 class="alert alert-danger">No se encontraron dato</h3>
+<% } %> 
+
+
+</div>
